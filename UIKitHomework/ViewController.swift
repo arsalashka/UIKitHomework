@@ -19,15 +19,23 @@ class ViewController: UIViewController {
 	@IBOutlet var greenSlider: UISlider!
 	@IBOutlet var blueSlider: UISlider!
 
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		// Sliders
 		redSlider.minimumTrackTintColor = .red
+		greenSlider.minimumTrackTintColor = .green
+		blueSlider.minimumTrackTintColor = .blue
+
+		redLabel.text = String(redSlider.value)
+		greenLabel.text = String(greenSlider.value)
+		blueLabel.text = String(blueSlider.value)
 
 
 
 		// Labels
+
 
 
 
