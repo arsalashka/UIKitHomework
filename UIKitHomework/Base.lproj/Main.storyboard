@@ -70,47 +70,46 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mdt-hg-Wc1">
-                                <rect key="frame" x="114" y="283" width="282" height="31"/>
-                                <connections>
-                                    <action selector="setRedSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="0oA-ya-bxB"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.27000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-vW-iT7">
-                                <rect key="frame" x="114" y="340" width="282" height="31"/>
-                                <connections>
-                                    <action selector="serGreenSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="dYJ-pq-4TN"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.48999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-7L-dPA">
-                                <rect key="frame" x="114" y="397" width="282" height="31"/>
-                                <connections>
-                                    <action selector="setBlueSlider" destination="BYZ-38-t0r" eventType="valueChanged" id="GWM-co-Hjb"/>
-                                </connections>
-                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="A4M-Xw-ZnM">
+                                <rect key="frame" x="116" y="283" width="278" height="144"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mdt-hg-Wc1">
+                                        <rect key="frame" x="-2" y="0.0" width="282" height="31"/>
+                                        <connections>
+                                            <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="I1f-Lo-Mf9"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.27000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SE8-vW-iT7">
+                                        <rect key="frame" x="-2" y="57" width="282" height="31"/>
+                                        <connections>
+                                            <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="uo1-Fc-L2S"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.48999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-7L-dPA">
+                                        <rect key="frame" x="-2" y="114" width="282" height="31"/>
+                                        <connections>
+                                            <action selector="rgbSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ncr-y2-A22"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="mdt-hg-Wc1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="1xZ-7k-psN"/>
                             <constraint firstItem="95A-nV-pzJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3u1-6K-sr9"/>
-                            <constraint firstItem="SE8-vW-iT7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="9MX-yY-YJ8"/>
                             <constraint firstItem="GPg-gJ-akb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AED-Mc-HNK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A4M-Xw-ZnM" secondAttribute="trailing" constant="20" id="Fb9-RN-JnW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="95A-nV-pzJ" secondAttribute="trailing" constant="20" id="FxW-MO-DhM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mdt-hg-Wc1" secondAttribute="trailing" constant="20" id="IfZ-bL-4P9"/>
                             <constraint firstItem="nzV-Si-Bz6" firstAttribute="top" secondItem="DhL-Nf-gw9" secondAttribute="bottom" constant="40" id="JQ8-nV-DBT"/>
-                            <constraint firstItem="UCm-7L-dPA" firstAttribute="top" secondItem="SE8-vW-iT7" secondAttribute="bottom" constant="27" id="Lxy-gf-zR8"/>
+                            <constraint firstItem="A4M-Xw-ZnM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="NZe-oy-qqH"/>
                             <constraint firstItem="95A-nV-pzJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Onk-dQ-2p2"/>
                             <constraint firstItem="DhL-Nf-gw9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R3d-rP-efw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SE8-vW-iT7" secondAttribute="trailing" constant="20" id="WTR-wO-KgK"/>
-                            <constraint firstItem="UCm-7L-dPA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="116" id="aY3-Sj-ebg"/>
                             <constraint firstItem="GPg-gJ-akb" firstAttribute="top" secondItem="95A-nV-pzJ" secondAttribute="bottom" constant="40" id="gxL-VI-EiC"/>
                             <constraint firstItem="DhL-Nf-gw9" firstAttribute="top" secondItem="GPg-gJ-akb" secondAttribute="bottom" constant="40" id="kmz-gp-8e1"/>
                             <constraint firstItem="95A-nV-pzJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.207589" id="kzd-29-nZu"/>
                             <constraint firstItem="nzV-Si-Bz6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oLp-AM-eKA"/>
-                            <constraint firstItem="SE8-vW-iT7" firstAttribute="top" secondItem="mdt-hg-Wc1" secondAttribute="bottom" constant="27" id="rYb-SR-MBf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UCm-7L-dPA" secondAttribute="trailing" constant="20" id="ubN-X3-Awh"/>
-                            <constraint firstItem="mdt-hg-Wc1" firstAttribute="top" secondItem="95A-nV-pzJ" secondAttribute="bottom" constant="33" id="xE9-G3-Ipt"/>
+                            <constraint firstItem="A4M-Xw-ZnM" firstAttribute="top" secondItem="95A-nV-pzJ" secondAttribute="bottom" constant="33" id="zjp-oZ-fpC"/>
                         </constraints>
                     </view>
                     <connections>

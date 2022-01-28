@@ -9,10 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	var redSliderValue: CGFloat = 0
-	var greenSliderValue: CGFloat = 0
-	var blueSliderValue: CGFloat = 0
-
 	@IBOutlet var mainView: UIView!
 
 	@IBOutlet var redLabel: UILabel!
@@ -30,36 +26,56 @@ class ViewController: UIViewController {
 		// Sliders
 		redSlider.minimumTrackTintColor = .red
 		greenSlider.minimumTrackTintColor = .green
-		blueSlider.minimumTrackTintColor = .blue
 
-		redLabel.text = String(redSlider.value)
-		greenLabel.text = String(greenSlider.value)
-		blueLabel.text = String(blueSlider.value)
-
-		redSliderValue = CGFloat(redSlider.value)
-		greenSliderValue = CGFloat(greenSlider.value)
-		blueSliderValue = CGFloat(blueSlider.value)
+		// Labels
+		setValue(for: redLabel, greenLabel, blueLabel)
 
 		// mainView
 		mainView.layer.cornerRadius = 15
-		mainView.backgroundColor = UIColor(red: redSliderValue, green: greenSliderValue, blue: blueSliderValue, alpha: 1)
+		paintMainView()
 	}
 
-	@IBAction func setRedSlider() {
-		redLabel.text = String(format: "%.2f", redSlider.value)
-		redSliderValue = CGFloat(redSlider.value)
-		mainView.backgroundColor = UIColor(red: redSliderValue, green: greenSliderValue, blue: blueSliderValue, alpha: 1)
+	@IBAction func rgbSliders(_ sender: UISlider) {
+
+		switch sender {
+		case redSlider:
+			redLabel.text = string(form: redSlider)
+		case greenSlider:
+			greenLabel.text = string(form: greenSlider)
+		default:
+			blueLabel.text = string(form: blueSlider)
+		}
+		paintMainView()
+	}
+}
+
+
+// MARK: - Private Methods
+
+extension ViewController {
+	private func paintMainView() {
+		mainView.backgroundColor = UIColor(
+			red: CGFloat(redSlider.value),
+			green: CGFloat(greenSlider.value),
+			blue: CGFloat(blueSlider.value),
+			alpha: 1
+		)
 	}
 
-	@IBAction func serGreenSlider() {
-		greenLabel.text = String(format: "%.2f", greenSlider.value)
-		greenSliderValue = CGFloat(greenSlider.value)
-		mainView.backgroundColor = UIColor(red: redSliderValue, green: greenSliderValue, blue: blueSliderValue, alpha: 1)
+	private func setValue(for labels: UILabel...) {
+		labels.forEach { label in
+			switch label {
+			case redLabel:
+				redLabel.text = string(form: redSlider)
+			case greenLabel:
+				greenLabel.text = string(form: greenSlider)
+			default:
+				blueLabel.text = string(form: blueSlider)
+			}
+		}
 	}
 
-	@IBAction func setBlueSlider() {
-		blueLabel.text = String(format: "%.2f", blueSlider.value)
-		blueSliderValue = CGFloat(blueSlider.value)
-		mainView.backgroundColor = UIColor(red: redSliderValue, green: greenSliderValue, blue: blueSliderValue, alpha: 1)
+	private func string(form slider: UISlider) -> String {
+		String(format: "%.2f", slider.value)
 	}
 }
